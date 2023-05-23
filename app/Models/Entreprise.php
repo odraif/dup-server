@@ -9,11 +9,12 @@ class Entreprise extends Model
 {
     use HasFactory;
     protected $table = 'Entreprise';
-    protected $filltables =[
+    protected $fillable =[
         'NomEntreprise',
         "RC",
         "Patente",
         "IF",
+        "email",
         "ICE",
         "Adresse",
         "SiteWeb",

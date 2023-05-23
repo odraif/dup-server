@@ -14,10 +14,16 @@ class EntrepriseController extends Controller
         $entre->Patente = $request->input("Patente");
         $entre->IF = $request->input("IF");
         $entre->ICE = $request->input("ICE");
+        $entre->Email = $request->input("Email");
         $entre->Adresse = $request->input("Adresse");
         $entre->SiteWeb = $request->input("SiteWeb");
         $entre->NomPersonnel = $request->input("NomPersonnel");
         $entre->ResponsableDuService = $request->input("ResponsableServie");
         $entre->save();
+
+        return response()->json([
+            'status' => 201,
+            'msg' => 'succes',
+        ]);
     }
 }

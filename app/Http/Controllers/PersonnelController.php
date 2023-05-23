@@ -11,10 +11,14 @@ class PersonnelController extends Controller
         $person = new Personnel;
         $person->Nom = $request->input("Nom");
         $person->Prenom = $request->input("Prenom");
-        $person->CIN = $request->input("CIN");
         $person->Email = $request->input("Email");
         $person->NumTel = $request->input("NumTel");
-        $person->Adresse = $request->input("Adresse");
+        $person->ville = $request->input("Ville");
         $person->save();
+
+        return response()->json([
+            'status' => 201,
+            'msg' => 'succes',
+        ]);
     }
 }

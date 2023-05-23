@@ -9,7 +9,7 @@ class Demande extends Model
 {
     use HasFactory;
     protected $table = 'Demande';
-    protected $filltables =[
+    protected $fillable =[
         'id_client',
         "prixTotal",
         "Platform",
