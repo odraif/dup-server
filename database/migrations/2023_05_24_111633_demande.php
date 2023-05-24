@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string("DegUI")->default("vide");
             $table->string("Features")->default("vide");
             $table->string("Services")->default("vide");
-            $table->date('created_at');
+            $table->timestamps();
         });
     }
 

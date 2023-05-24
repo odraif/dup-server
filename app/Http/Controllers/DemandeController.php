@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\demande as MailDemande;
 use App\Models\Demande;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class DemandeController extends Controller
 {
@@ -13,14 +15,17 @@ class DemandeController extends Controller
 
 
         $jsonData = $request->all();
-
         $userid = "";
-        if ($request->is('entreprise/*')) {
-            $userid = DB::table('Entreprise')->where('Email', $jsonData['Email'])->value('id');
-        } else {
-            $userid = DB::table('Personnel')->where('Email', $jsonData['Email'])->value('id');
-        }
 
+
+        $userid = (DB::table('Entreprise')->where('Email', $jsonData['Email'])->value('id')) ? DB::table('Entreprise')->where('Email', $jsonData['Email'])->value('id') : DB::table('Personnel')->where('Email', $jsonData['Email'])->value('id');
+
+        $dem = [
+            "client_id" => $userid,
+            "client_email" => $jsonData['Email'],
+        ];;
+
+        Mail::to("dup@demande.ma")->send(new MailDemande($dem));
 
         $demande = new Demande;
         $demande->id_client = $userid;

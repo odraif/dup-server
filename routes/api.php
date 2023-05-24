@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DemandeController;
 use App\Http\Controllers\EntrepriseController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PersonnelController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::post("/entreprise/store", [EntrepriseController::class, "store"]);
 Route::post("/personnel/store", [PersonnelController::class, "store"]);
 Route::post("/demande/store", [DemandeController::class, "store"]);
+Route::post("/message/store", [MessageController::class, "store"]);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

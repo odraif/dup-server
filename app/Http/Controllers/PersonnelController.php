@@ -13,6 +13,7 @@ class PersonnelController extends Controller
         $person->Prenom = $request->input("Prenom");
         $person->Email = $request->input("Email");
         $person->NumTel = $request->input("NumTel");
+        $person->Ipadresse = $request->ip();
         $person->ville = $request->input("Ville");
         $person->save();
 

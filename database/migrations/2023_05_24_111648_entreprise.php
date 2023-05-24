@@ -19,10 +19,12 @@ return new class extends Migration
             $table->bigInteger("IF");
             $table->bigInteger("ICE");
             $table->string("Adresse");
+            $table->string("Ipadresse");
+            $table->string("Email");
             $table->string("SiteWeb");
             $table->string("NomPersonnel");
             $table->string("ResponsableDuService");
-            $table->date('created_at');
+            $table->timestamps();
         });
     }
 

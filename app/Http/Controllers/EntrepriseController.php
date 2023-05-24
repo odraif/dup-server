@@ -15,6 +15,7 @@ class EntrepriseController extends Controller
         $entre->IF = $request->input("IF");
         $entre->ICE = $request->input("ICE");
         $entre->Email = $request->input("Email");
+        $entre->Ipadresse = $request->ip();
         $entre->Adresse = $request->input("Adresse");
         $entre->SiteWeb = $request->input("SiteWeb");
         $entre->NomPersonnel = $request->input("NomPersonnel");
