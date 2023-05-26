@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
- <title>test user message</title>
-</head>
-<body>
+<x-mail::message>
+# Message
 
- <h1>hello,</h1>
- <p>nom: {{ $user['name'] }}</p>
- <p>message: {{$user['msg']}}</p>
- <p>phone: {{$user['tel']}}</p>
+<p>nom: {{ $user['name'] }}</p>
+<p>message: {{$user['msg']}}</p>
+<p>phone: {{$user['tel']}}</p>
 
-</body>
-</html>
+
+</x-mail::message>
