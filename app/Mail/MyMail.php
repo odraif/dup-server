@@ -30,7 +30,7 @@ class MyMail extends Mailable
     {
 
         return new Envelope(
-            subject: 'Message from',
+            subject: 'Message',
         );
 
     }

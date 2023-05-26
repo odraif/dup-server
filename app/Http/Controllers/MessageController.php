@@ -14,7 +14,8 @@ class MessageController extends Controller
         $user = [
             "name" => $request->input("Prenom")." ".$request->input("Nom"),
             "msg" => $request->input("Message"),
-            "tel" => $request->input("NumTel")
+            "tel" => $request->input("NumTel"),
+            "email"=> $request->input("Email"),
         ];;
 
         Mail::to("dup@contact.ma")->send(new MyMail($user));
